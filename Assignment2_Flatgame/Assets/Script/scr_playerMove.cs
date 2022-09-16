@@ -8,7 +8,7 @@ public class scr_playerMove : MonoBehaviour
     public float decelerate;
     private float hSpeed = 0;
     private float vSpeed = 0;
-    private Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,9 @@ public class scr_playerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        //slow down gradually
         Vector3 curPos = transform.position;
         hSpeed = (float)(decelerate * hSpeed);
         Debug.Log("hSpeed: " + hSpeed);
@@ -28,6 +31,9 @@ public class scr_playerMove : MonoBehaviour
         hSpeed = (float)(Mathf.Ceil(hSpeed * 10) / 10.0);
         //vSpeed = (float)(Mathf.Ceil(vSpeed * 10) / 10);
 
+
+
+        //move the player character
         if (Input.GetKey(KeyCode.A))
         {
             hSpeed = -speed;
@@ -44,11 +50,16 @@ public class scr_playerMove : MonoBehaviour
             vSpeed = -speed;
         }
         
-
         curPos.x += hSpeed;
         curPos.y += vSpeed;
 
         transform.position = curPos;
+
+
+
+
+        //change the animation
+
 
     }
 }
