@@ -24,12 +24,8 @@ public class scr_playerMove : MonoBehaviour
         //slow down gradually
         Vector3 curPos = transform.position;
         hSpeed = (float)(decelerate * hSpeed);
-        Debug.Log("hSpeed: " + hSpeed);
         vSpeed = (float)(decelerate * vSpeed);
-        Debug.Log("vSpeed: " + vSpeed);
-        //trim down the number
-        hSpeed = (float)(Mathf.Ceil(hSpeed * 10) / 10.0);
-        //vSpeed = (float)(Mathf.Ceil(vSpeed * 10) / 10);
+
 
 
 
