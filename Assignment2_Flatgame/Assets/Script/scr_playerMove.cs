@@ -10,15 +10,14 @@ public class scr_playerMove : MonoBehaviour
     private float vSpeed = 0;
     public Animator anim;
     private SpriteRenderer sprRender;
-    bool inBound;
+    public bool moveLeft;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        inBound = true;
         sprRender = GetComponent<SpriteRenderer>();
-        
+        moveLeft = false;
     }
 
 
@@ -56,17 +55,18 @@ public class scr_playerMove : MonoBehaviour
         hSpeed = (float)(decelerate * hSpeed);
         vSpeed = (float)(decelerate * vSpeed);
 
-        if (inBound)
-        {
 
             //move the player character
             if (Input.GetKey(KeyCode.A))
             {
                 hSpeed = -speed;
+                moveLeft = true;
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 hSpeed = speed;
+                moveLeft = false;
+            
             }
             if (Input.GetKey(KeyCode.W))
             {
@@ -76,8 +76,6 @@ public class scr_playerMove : MonoBehaviour
             {
                 vSpeed = -speed;
             }
-
-        }
 
 
         curPos.x += hSpeed;

@@ -7,21 +7,26 @@ public class scr_camerFollow : MonoBehaviour
     public Camera playerCam;
     public GameObject player;
     private Vector3 camPos;
+    private Vector3 oldCamPos;
     private Vector3 mcPos;
     private Vector3 relativePos;
+    scr_playerMove moveScript;
 
     // Start is called before the first frame update
     void Start()
     {
         camPos = playerCam.transform.position;
+        oldCamPos = playerCam.transform.position;
         mcPos = player.transform.position;
         relativePos = camPos - mcPos;
+        moveScript = player.GetComponent<scr_playerMove>();
     }
 
     // Update is called once per frame
     void Update()
     {
         camPos = playerCam.transform.position;
+        oldCamPos = playerCam.transform.position;
         mcPos = player.transform.position;
 
         //I will just hard-coded the position for now since that is actually easier
@@ -29,13 +34,10 @@ public class scr_camerFollow : MonoBehaviour
         {
             camPos.x = relativePos.x + mcPos.x;
             Debug.Log("normal move");
-        }else if(camPos.x < -0.38)
+        }
+        else 
         {
-            camPos.x = (float)-0.379;
-            Debug.Log("left Bound");
-        }else if(camPos.x > 80.81)
-        {
-            camPos.x = (float)80.8;
+            camPos.x = Mathf.Round(oldCamPos.x);
         }
         
 
