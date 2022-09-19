@@ -85,11 +85,12 @@ public class scr_playerMove : MonoBehaviour
 
         transform.position = curPos;
 
-
-
     }
 
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
+    }
 
 
 }
