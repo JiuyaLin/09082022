@@ -30,7 +30,7 @@ public class scr_camerFollow : MonoBehaviour
         mcPos = player.transform.position;
 
         //I will just hard-coded the position for now since that is actually easier
-        if(camPos.x > -0.38 && camPos.x < 80.81)
+        /*if(camPos.x > -0.38 && camPos.x < 80.81)
         {
             camPos.x = relativePos.x + mcPos.x;
             Debug.Log("normal move");
@@ -38,8 +38,25 @@ public class scr_camerFollow : MonoBehaviour
         else 
         {
             camPos.x = Mathf.Round(oldCamPos.x);
+        }*/
+
+
+        if (moveScript.moveLeft)
+        {
+            if(camPos.x > -0.38f)
+            {
+                camPos.x = relativePos.x + mcPos.x;
+            }
+            
         }
-        
+        else
+        {
+            if (camPos.x < 80.81)
+            {
+                camPos.x = relativePos.x + mcPos.x;
+            }
+        }
+
 
         playerCam.transform.position = camPos;
         Debug.Log("moved");

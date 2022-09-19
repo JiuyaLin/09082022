@@ -56,32 +56,38 @@ public class scr_playerMove : MonoBehaviour
         vSpeed = (float)(decelerate * vSpeed);
 
 
-            //move the player character
-            if (Input.GetKey(KeyCode.A))
-            {
-                hSpeed = -speed;
-                moveLeft = true;
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                hSpeed = speed;
-                moveLeft = false;
+        //move the player character
+        if (Input.GetKey(KeyCode.A))
+        {
+            hSpeed = -speed;
+            moveLeft = true;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            hSpeed = speed;
+            moveLeft = false;
             
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                vSpeed = speed;
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                vSpeed = -speed;
-            }
-
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            vSpeed = speed;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            vSpeed = -speed;
+        }
 
         curPos.x += hSpeed;
         curPos.y += vSpeed;
 
         transform.position = curPos;
+
+
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("to collect");
+        }
 
     }
 
