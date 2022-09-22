@@ -24,7 +24,7 @@ public class scr_playerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         //change the animation
         if (Input.GetKeyDown(KeyCode.A) ||
             Input.GetKeyDown(KeyCode.D) ||
