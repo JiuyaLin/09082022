@@ -351,8 +351,9 @@ GameObject:
   - component: {fileID: 1875147453}
   - component: {fileID: 1875147452}
   - component: {fileID: 1875147456}
+  - component: {fileID: 1875147457}
   m_Layer: 2
-  m_Name: spr_walk1
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,4 +486,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementMultiplier: 100
-  castDistance: 0
+  castDistance: 1
+  jumpLimit: 50
+  gravityScale: 5
+  gravityFall: 2
+--- !u!95 &1875147457
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875147451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc40d70f6bdd74f539858558f44c67b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
