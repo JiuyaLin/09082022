@@ -6,12 +6,14 @@ public class MCAnimation : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    AudioSource collisionSnd;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        collisionSnd = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,5 +30,15 @@ public class MCAnimation : MonoBehaviour
         {
             anim.Play("Idle");
         }
+
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        collisionSnd.pitch = Random.Range(0.5f, 2.5f);
+        collisionSnd.volume = Random.Range(0f, 1.0f);
+        collisionSnd.Play();
+        Debug.Log("collided");
+    }
+
 }
