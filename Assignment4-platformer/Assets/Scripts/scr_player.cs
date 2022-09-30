@@ -5,7 +5,8 @@ using UnityEngine;
 public class scr_player : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float panSpeed;
+    Animator anim;
+    //public float panSpeed;
     private float horizontalMove;
     public float movementMulti;
 
@@ -13,7 +14,7 @@ public class scr_player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        panSpeed = 0.1f;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,10 +38,14 @@ public class scr_player : MonoBehaviour
         rb.velocity = new Vector3(moveX, rb.velocity.y);
         if(rb.velocity.x > 0)
         {
-            //walk right
+            anim.Play("walkR");
         }else if(rb.velocity.x < 0)
         {
-
+            anim.Play("walkL");
+        }
+        else
+        {
+            anim.Play("idle");
         }
     }
 }
