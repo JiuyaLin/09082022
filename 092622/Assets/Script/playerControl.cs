@@ -69,7 +69,7 @@ public class playerControl : MonoBehaviour
         //Scripting API: https://docs.unity3d.com/ScriptReference/Physics.Raycast.html
         //Vector2.down = Vector2(0, -1) (shorthand version)
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, castDistance); //An inbuild physics function.
-                                                                                              //Debug.DrawRay(transform.position, Vector2.down*castDistance, new Color(255,0,0));
+        //Debug.DrawRay(transform.position, Vector2.down*castDistance, new Color(255,0,0));
 
         //moving player to layer-> Ignored RayCast so the Log does not print player name
         if (hit.collider != null && hit.transform.name == "platform")

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class scr_sparkle : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,13 +18,13 @@ public class scr_sparkle : MonoBehaviour
 
     }
 
-    /*
-    void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collided");
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("collected");
+            Destroy(gameObject);
+            source.PlayOneShot(clip);
         }
-    }*/
+    }
 }
