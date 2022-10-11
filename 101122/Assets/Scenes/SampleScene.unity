@@ -236,9 +236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd00c5fc99414a3ba204ad9cf42f71d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellObj: {fileID: 4622939470835791316, guid: 0249706d650b542688a5b7987ecf6505, type: 3}
   gridX: 20
   gridY: 20
+  cellObj:
+  - {fileID: 4622939470835791316, guid: 0249706d650b542688a5b7987ecf6505, type: 3}
+  - {fileID: 3384099161152032128, guid: 81647c1f931b544d5a91b460890c4acd, type: 3}
+  - {fileID: 474510437327776097, guid: 1fe12792927b14078ac151497b19d8f7, type: 3}
+  - {fileID: 4759029534587067932, guid: a58d1c8204aad4833bbf53f0ca4bd57a, type: 3}
   offset: 2
 --- !u!4 &668968239
 Transform:
