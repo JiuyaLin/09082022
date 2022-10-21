@@ -28,6 +28,7 @@ public class scr_player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //movement (left right)
         horizontalMove = Input.GetAxis("Horizontal");
         
@@ -61,6 +62,7 @@ public class scr_player : MonoBehaviour
         if (jump)
         {
             rb.AddForce(Vector2.up * jumpLimit, ForceMode2D.Impulse);
+            Debug.Log("forced added");
             jump = false;
             jumpCounter = jumpCounter - 1;
         }
