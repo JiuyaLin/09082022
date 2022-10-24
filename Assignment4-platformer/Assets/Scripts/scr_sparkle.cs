@@ -5,11 +5,12 @@ using UnityEngine;
 public class scr_sparkle : MonoBehaviour
 {
     public AudioSource source;
-    public AudioClip clip;
+    public scr_gameManager gMscript;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -23,8 +24,11 @@ public class scr_sparkle : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            source.pitch = Random.Range(0.4f, 1.6f); 
+            source.Play();
             Destroy(gameObject);
-            source.PlayOneShot(clip);
+            gMscript.score++;
+            gMscript.updateScore();
         }
     }
 }

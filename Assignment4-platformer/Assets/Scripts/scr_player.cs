@@ -62,7 +62,6 @@ public class scr_player : MonoBehaviour
         if (jump)
         {
             rb.AddForce(Vector2.up * jumpLimit, ForceMode2D.Impulse);
-            Debug.Log("forced added");
             jump = false;
             jumpCounter = jumpCounter - 1;
         }
